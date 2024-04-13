@@ -13,20 +13,7 @@ function AuthContext({ children }) {
   const [isNotification, setNotification] = useState(0);
   const [paymentItem, setpaymentItem] = useState([]);
   const [Logindata, setLoginData] = useState("");
-  // const [email, setEmail] = useState("");
-
-  // const handleOnSubmit = async (e) => {
-  //   e.preventDefault();
-  //   let result = await fetch("http://127.0.0.1:3000/AuthContext", {
-  //     method: "post",
-  //     body: JSON.stringify({ Logindata, email }),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   result = await result.json();
-  //   console.log(result);
-  // };
+ 
 
   function datafecting() {
     fetch("https://fakestoreapi.com/products")
@@ -34,7 +21,7 @@ function AuthContext({ children }) {
       .then((data) => setAllProduct(data))
       .catch((error) => setAllProduct("Action Unkhown"));
   }
-  // console.log("USING USESsTATE" + Logindata);
+
 
   useEffect(() => {
     datafecting();

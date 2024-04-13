@@ -4,57 +4,10 @@ import { useAuth } from "./AuthContext";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function NavBar() {
-  // const history = useHistory();
+
   const { searchCard, ResetState, isNotification, Logindata } = useAuth();
   const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
-  const PostData = async (e) => {
-    e.preventDefault();
-
-    const {
-      given_name,
-      family_name,
-      nickname,
-      name,
-      picture,
-      locale,
-      updated_at,
-      email,
-      email_verified,
-      sub,
-    } = Logindata;
-
-    const res = await fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        given_name,
-        family_name,
-        nickname,
-        name,
-        picture,
-        locale,
-        updated_at,
-        email,
-        email_verified,
-        sub,
-      }),
-    });
-
-    const data = await res.JSON();
-
-    if (data.status === 422 || !data) {
-      window.alert("Invalid Operations");
-      console.log("Invalid Operations");
-    } else {
-      window.alert("Opreations Completed...");
-      console.log("Successfull Operations");
-
-      // history.push("/");
-    }
-  };
   console.log("NEVBAR2" + Logindata);
   return (
     <>
@@ -105,11 +58,6 @@ function NavBar() {
                 )}
               </NavLink>
             </button>
-            {/* <img
-              src="https://m.timesofindia.com/photo/85301692/85301692.jpg"
-              alt="idImage"
-              className="h-9 w-9 cursor-pointer rounded-full md:rounded-full"
-            /> */}
             {isAuthenticated && (
               <div className="flex">
                 <p>{user.name}</p>
@@ -127,7 +75,6 @@ function NavBar() {
                   logout({
                     logoutParams: { returnTo: window.location.origin },
                   });
-                  // PostData();
                 }}
               >
                 Log Out
@@ -138,7 +85,6 @@ function NavBar() {
                   className="rounded-lg bg-blue-600 p-1.5 hover:bg-green-700"
                   onClick={() => {
                     loginWithRedirect();
-                    // PostData();
                   }}
                 >
                   Log In

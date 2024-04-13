@@ -35,6 +35,8 @@ function HomePart() {
     }
   };
 
+ 
+
   const Card = (data) => (
     <>
       {isAuthenticated && (
@@ -116,14 +118,6 @@ function HomePart() {
               )}
             </div>
           </div>
-
-          {/*
-                  onClick={() => {
-                    setpaymentItem([...paymentItem, listofcard]);
-                    console.log(paymentItem);
-                    navigate("PaymentPage");
-                  }}
-                */}
           <div className="felx flex p-5 md:flex-col">
             <button className="mb-0 object-right-top text-green-700  md:mt-5 md:p-5">
               &#x20B9;{(data.price * 20).toFixed(2)}

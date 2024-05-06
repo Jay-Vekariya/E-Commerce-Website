@@ -36,19 +36,19 @@ export default function AddToCart() {
         <div className="md:flex ">
           <div className="shrink-1 grid place-content-center md:shrink-0 lg:h-48 lg:w-60">
             <img
-              className="object-fill h-64 w-48 md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
+              className="h-64 w-48 object-fill md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
               src={listofcard.image}
               alt="Online Shoping"
             />
           </div>
           <div className="p-4">
-            <div className="font-semibold text-2xl uppercase text-indigo-500">
+            <div className="text-2xl font-semibold uppercase text-indigo-500">
               {listofcard.category}
             </div>
             <div className=" block text-xl font-bold text-black hover:underline">
               {listofcard.title}
             </div>
-            <div className="text-blue text-lg my-4 font-semibold tracking-wide text-slate-600">
+            <div className="text-blue my-4 text-lg font-semibold tracking-wide text-slate-600">
               {listofcard.description}
             </div>
             <div className="flex place-content-center font-serif">
@@ -93,7 +93,7 @@ export default function AddToCart() {
           </div>
           <div className="flex place-content-center pb-4 md:flex-col md:place-content-start lg:place-content-start">
             <button className="mb-0 object-right-top text-green-700  md:mt-5 md:p-5">
-              &#x20B9;{(listofcard.price * 20).toFixed(2)}
+              &#x20B9;{(listofcard.price * 20 * listofcard.quantity).toFixed(2)}
             </button>
             <div className="mx-5 text-yellow-500">
               Rating:{listofcard.rating.rate}&#11088;

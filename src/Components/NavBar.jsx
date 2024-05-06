@@ -36,12 +36,16 @@ function NavBar() {
                 <option>ELECTRONICS</option>
                 <option>JEWELERY</option>
               </select>
-              <button className="text-2xl" onClick={ResetState} title="Reset items">
+              <button
+                className="text-2xl"
+                onClick={ResetState}
+                title="Reset items"
+              >
                 ⟲
               </button>
             </li>
             {!toggleButton && isAuthenticated && (
-              <p className="pt-2">
+              <p className="pt-2  lg:hidden xl:hidden 2xl:hidden">
                 <img
                   src={user.picture}
                   alt={user.name}

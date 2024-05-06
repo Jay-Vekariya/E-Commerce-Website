@@ -82,7 +82,6 @@ export default function AddToCart() {
                 <button
                   className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
                   onClick={() => {
-                    // setpaymentItem([...paymentItem, listofcard]);
                     loginWithRedirect();
                   }}
                 >

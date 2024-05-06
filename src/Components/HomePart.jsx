@@ -35,8 +35,6 @@ function HomePart() {
     }
   };
 
- 
-
   const Card = (data) => (
     <>
       {isAuthenticated && (
@@ -49,27 +47,27 @@ function HomePart() {
           setCardDetail([data]);
           navigate("selectedCard");
         }}
-        className="disabled mx-auto my-5 max-w-md cursor-pointer   overscroll-auto rounded-xl bg-white shadow-md hover:overscroll-contain md:max-w-4xl"
+        className="disabled mx-auto my-5 max-w-md cursor-pointer overscroll-auto   rounded-xl bg-white p-12 shadow-md hover:overscroll-contain md:max-w-4xl"
       >
         <div className="md:flex">
-          <div className="shrink-1 md:shrink-0">
+          <div className="shrink-1 grid place-content-center md:shrink-0 lg:h-48 lg:w-60">
             <img
-              className="md:h-42 h-48 w-full object-cover md:w-48"
+              className="h-64 w-48 object-fill md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
               src={data.image}
               alt="Online Shoping"
             />
           </div>
-          <div className="p-8">
-            <div className="font-semibold uppercase text-indigo-500">
+          <div className="p-4">
+            <div className="text-2xl font-semibold uppercase text-indigo-500">
               {data.category}
             </div>
-            <div className="block cursor-pointer text-lg font-bold text-black hover:underline">
+            <div className="block cursor-pointer text-xl font-bold text-black hover:underline">
               {data.title}
             </div>
             <div>
               <div
                 onClick={(e) => e.stopPropagation()}
-                className="text-blue mt-2 text-sm font-semibold tracking-wide text-slate-600"
+                className="text-blue mt-2 text-lg font-semibold tracking-wide text-slate-600"
               >
                 <ReactReadMoreReadLess
                   charLimit={100}
@@ -83,14 +81,14 @@ function HomePart() {
               </div>
             </div>
 
-            <div className="text-center md:text-left">
+            <div className="mt-3 text-center md:text-left">
               <button
                 onClick={(e) => {
                   handleAddToCart(data);
                   e.stopPropagation();
                   navigate("addtocart");
                 }}
-                className="my-2 rounded-md bg-indigo-500 p-1 uppercase text-white transition duration-300 hover:bg-blue-600"
+                className="rounded-md bg-indigo-500 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
               >
                 Add To Cart
               </button>
@@ -101,7 +99,7 @@ function HomePart() {
                     navigate("PaymentPage");
                     setpaymentItem([data]);
                   }}
-                  className="mx-3 my-2 rounded-md bg-green-600 p-1 uppercase text-white transition duration-300 hover:bg-blue-600"
+                  className="mx-3 rounded-md bg-green-600 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
                 >
                   Buy Now
                 </button>
@@ -118,7 +116,7 @@ function HomePart() {
               )}
             </div>
           </div>
-          <div className="felx flex p-5 md:flex-col">
+          <div className="flex place-content-center text-[20px] md:flex-col md:place-content-start lg:place-content-start">
             <button className="mb-0 object-right-top text-green-700  md:mt-5 md:p-5">
               &#x20B9;{(data.price * 20).toFixed(2)}
             </button>

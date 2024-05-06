@@ -76,24 +76,24 @@ function PaymentPage() {
                 <>
                   <div className="flex">
                     <div className="md:flex">
-                      <div className="shrink-1 md:shrink-0">
+                      <div className="shrink-1 flex place-content-center md:shrink-0">
                         <img
-                          className="h-48 w-full object-cover pb-5 md:h-72 md:w-48"
+                          className="h-[300px] object-fill md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
                           src={FinalItem.image}
                           alt="Online Shooping"
                         />
                       </div>
                       <div className="p-8">
-                        <div className="font-semibold uppercase text-indigo-500">
+                        <div className="text-2xl font-semibold uppercase text-indigo-500">
                           {FinalItem.category}
                         </div>
-                        <div className="block cursor-pointer text-lg font-bold text-black hover:underline">
+                        <div className="block cursor-pointer text-xl font-bold text-black hover:underline">
                           {FinalItem.title}
                         </div>
-                        <div className="text-blue mt-2 text-sm font-bold tracking-wide text-slate-600">
+                        <div className="text-blue mt-2 text-lg font-bold tracking-wide text-slate-600">
                           {FinalItem.description}
                         </div>
-                        <button className="mt-5 rounded-lg bg-green-600 p-1">
+                        <button className="mt-5 rounded-lg bg-green-600 p-3 font-serif text-[25px] text-white">
                           Price &#x20B9;{FinalItem.price}
                         </button>
                       </div>
@@ -108,7 +108,7 @@ function PaymentPage() {
             <div className="text-center">
               <button
                 onClick={() => navigate("fororder")}
-                className="mt-5 rounded-lg bg-yellow-400 p-2 text-center font-bold"
+                className="mt-5 rounded-lg bg-yellow-400 p-2 text-center font-serif text-[25px] font-bold"
               >
                 Place Your Order
               </button>

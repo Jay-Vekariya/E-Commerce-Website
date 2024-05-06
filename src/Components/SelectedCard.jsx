@@ -25,19 +25,19 @@ function SelectedCard() {
                 <div className="md:flex">
                   <div className="p-12 md:shrink-0">
                     <img
-                      className="grid h-56 w-full place-items-center gap-4 object-cover md:h-48 md:w-48 "
+                      className="object-fill h-64 w-48 md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
                       src={card.image}
                       alt="shoping-cart"
                     />
                   </div>
-                  <div className="p-8">
-                    <div className="font-semibold uppercase text-violet-700">
+                  <div className="p-4 place-content-center">
+                    <div className="font-semibold uppercase text-violet-700 text-2xl">
                       {card.category}
                     </div>
-                    <div className="block text-lg font-bold text-black hover:underline">
+                    <div className="block text-xl font-bold text-black hover:underline">
                       {card.title}
                     </div>
-                    <div className="text-blue mt-2 text-sm font-semibold tracking-wide text-slate-600">
+                    <div className="text-blue mt-2 text-lg font-semibold tracking-wide text-slate-600">
                       {card.description}
                     </div>
                   </div>

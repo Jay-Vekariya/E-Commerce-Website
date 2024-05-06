@@ -33,7 +33,7 @@ function CartButton({ listofcard }) {
           </button>
         ) : (
           <button
-            className="roundedz-full box-border h-7 w-7 rounded-full border border-none  bg-green-700 text-white"
+            className="roundedz-full box-border h-9 w-9 text-[30px]  rounded-full border border-none  bg-green-700 text-white"
             onClick={() => {
               let seletedcard = AddtoCard.find(
                 (list) => list.id === listofcard.id,
@@ -57,13 +57,13 @@ function CartButton({ listofcard }) {
         <input
           type="text"
           value={listofcard.quantity}
-          className="w-7 text-center"
+          className="w-7 text-center text-[25px]"
           onChange={(e) => Number(e.target.value)}
         />
       </div>
       <div>
         <button
-          className="h-7 w-7 rounded-full border-none bg-green-700 text-white"
+          className="h-9 w-9 rounded-full border-none bg-green-700 text-white"
           onClick={() => {
             let seletedcard = AddtoCard.find(
               (list) => list.id === listofcard.id,

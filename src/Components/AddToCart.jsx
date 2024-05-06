@@ -34,84 +34,73 @@ export default function AddToCart() {
         className="mx-auto my-4  max-w-md overflow-hidden rounded-xl bg-white shadow-2xl md:max-w-4xl "
       >
         <div className="md:flex ">
-          <div className="p-12 md:shrink-0">
+          <div className="shrink-1 grid place-content-center md:shrink-0 lg:h-48 lg:w-60">
             <img
-              className="grid h-56 w-full grid-cols-3 place-items-center gap-4 object-cover md:h-48 md:w-48"
+              className="object-fill h-64 w-48 md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
               src={listofcard.image}
               alt="Online Shoping"
             />
           </div>
-          <div className="p-8">
-            <div className="font-semibold uppercase text-indigo-500">
+          <div className="p-4">
+            <div className="font-semibold text-2xl uppercase text-indigo-500">
               {listofcard.category}
             </div>
-            <div className=" block text-lg font-bold text-black hover:underline">
+            <div className=" block text-xl font-bold text-black hover:underline">
               {listofcard.title}
             </div>
-            <div className="text-blue mt-2 text-sm font-semibold tracking-wide text-slate-600">
+            <div className="text-blue text-lg my-4 font-semibold tracking-wide text-slate-600">
               {listofcard.description}
             </div>
-            <div className="my-5">
+            <div className="flex place-content-center font-serif">
               <CartButton listofcard={listofcard} />
-              <div className="my-5 flex space-x-5">
-                <div>Quantity: {listofcard.quantity}</div>
-                <div
-                  onClick={() => {
-                    hadleDeleteItem(listofcard.id);
-                    setNotification(Number(isNotification - 1));
-                    setCompareItems([]);
-                  }}
-                  className="cursor-pointer rounded-xl border bg-red-500 p-1"
-                >
-                  Delete
-                </div>
-                {isAuthenticated ? (
-                  <button
-                    className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
-                    onClick={() => {
-                      // setpaymentItem([...paymentItem, listofcard]);
-                      setpaymentItem([listofcard]);
-                      console.log(paymentItem);
-                      navigate("PaymentPage");
-                    }}
-                  >
-                    Next
-                  </button>
-                ) : (
-                  <button
-                    className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
-                    onClick={() => {
-                      // setpaymentItem([...paymentItem, listofcard]);
-                      loginWithRedirect();
-                    }}
-                  >
-                    Next
-                  </button>
-                )}
+            </div>
+            <div className="mt-6 flex place-content-center space-x-5 font-serif text-[20px]">
+              <div>Quantity: {listofcard.quantity}</div>
+              <div
+                onClick={() => {
+                  hadleDeleteItem(listofcard.id);
+                  setNotification(Number(isNotification - 1));
+                  setCompareItems([]);
+                }}
+                className="cursor-pointer rounded-xl border bg-red-500 p-1"
+              >
+                Delete
               </div>
+              {isAuthenticated ? (
+                <button
+                  className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
+                  onClick={() => {
+                    // setpaymentItem([...paymentItem, listofcard]);
+                    setpaymentItem([listofcard]);
+                    console.log(paymentItem);
+                    navigate("PaymentPage");
+                  }}
+                >
+                  Next
+                </button>
+              ) : (
+                <button
+                  className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
+                  onClick={() => {
+                    // setpaymentItem([...paymentItem, listofcard]);
+                    loginWithRedirect();
+                  }}
+                >
+                  Next
+                </button>
+              )}
             </div>
           </div>
-          <div>
-            <button className="mb-0 mt-5 object-right-top  p-5 text-green-700">
-              &#x20B9;
-              {Number(listofcard.price * 20 * listofcard.quantity).toFixed(2)}
+          <div className="flex place-content-center pb-4 md:flex-col md:place-content-start lg:place-content-start">
+            <button className="mb-0 object-right-top text-green-700  md:mt-5 md:p-5">
+              &#x20B9;{(listofcard.price * 20).toFixed(2)}
             </button>
             <div className="mx-5 text-yellow-500">
-              Rating:{listofcard.rating?.rate}&#11088;
+              Rating:{listofcard.rating.rate}&#11088;
             </div>
-            <div className="mx-5 mt-2 text-black">
-              Count:{listofcard.rating?.count}
+            <div className="mx-5 text-black md:mt-2">
+              Count:{listofcard.rating.count}
             </div>
-          </div>
-          <div
-            onClick={() => {
-              hadleDeleteItem(listofcard.id);
-              setNotification(Number(isNotification - 1));
-              setCompareItems([]);
-            }}
-            className="cursor-pointer p-4"
-          >
-            &#9940;
           </div>
         </div>
       </li>

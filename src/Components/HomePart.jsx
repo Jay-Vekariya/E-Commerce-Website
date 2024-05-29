@@ -36,7 +36,7 @@ function HomePart() {
   };
 
   const Card = (data) => (
-    <>
+    <main className="mx-auto my-5 min-w-[300px] max-w-sm p-4 text-center md:max-w-4xl">
       {isAuthenticated && (
         <pre>{setLoginData(JSON.stringify(user, null, 2))}</pre>
       )}
@@ -50,14 +50,14 @@ function HomePart() {
         className="disabled mx-auto my-5 max-w-md cursor-pointer overscroll-auto   rounded-xl bg-white p-12 shadow-md hover:overscroll-contain md:max-w-4xl"
       >
         <div className="md:flex">
-          <div className="shrink-1 grid place-content-center md:shrink-0 lg:h-48 lg:w-60">
+          <div className="flex justify-center md:shrink-0 md:justify-start lg:h-48 lg:w-60">
             <img
               className="h-64 w-48 object-fill md:h-64 md:w-48 lg:h-64 lg:w-48 xl:h-64 xl:w-48 2xl:h-64 2xl:w-48"
               src={data.image}
               alt="Online Shoping"
             />
           </div>
-          <div className="p-4">
+          <div className="flex flex-col justify-between p-4">
             <div className="text-2xl font-semibold uppercase text-indigo-500">
               {data.category}
             </div>
@@ -81,14 +81,14 @@ function HomePart() {
               </div>
             </div>
 
-            <div className="mt-3 text-center md:text-left">
+            <div className="mt-3 flex text-center md:text-left">
               <button
                 onClick={(e) => {
                   handleAddToCart(data);
                   e.stopPropagation();
                   navigate("addtocart");
                 }}
-                className="rounded-md bg-indigo-500 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
+                className="h-10 w-40 rounded-md bg-indigo-500 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
               >
                 Add To Cart
               </button>
@@ -99,7 +99,7 @@ function HomePart() {
                     navigate("PaymentPage");
                     setpaymentItem([data]);
                   }}
-                  className="mx-3 rounded-md bg-green-600 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
+                  className="mx-3 h-10 rounded-md bg-green-600 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
                 >
                   Buy Now
                 </button>
@@ -116,7 +116,7 @@ function HomePart() {
               )}
             </div>
           </div>
-          <div className="flex place-content-center text-[20px] md:flex-col md:place-content-start lg:place-content-start">
+          <div className="flex-col place-content-center text-center text-[20px] md:flex-col md:place-content-start lg:place-content-start">
             <button className="mb-0 object-right-top text-green-700  md:mt-5 md:p-5">
               &#x20B9;{(data.price * 20).toFixed(2)}
             </button>
@@ -129,13 +129,13 @@ function HomePart() {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 
   return (
     <>
       <NavBar />
-      <div className="overflow-auto">
+      <div className="flex min-w-[514px] flex-wrap justify-center">
         {AllProduct.map((data) => Card(data))}
       </div>
       <Footer />

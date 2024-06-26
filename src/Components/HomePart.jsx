@@ -47,7 +47,7 @@ function HomePart() {
           setCardDetail([data]);
           navigate("selectedCard");
         }}
-        className="disabled mx-auto my-5 max-w-md cursor-pointer overscroll-auto   rounded-xl bg-white p-12 shadow-md hover:overscroll-contain md:max-w-4xl"
+        className="disabled mx-auto my-5 max-w-md cursor-pointer overscroll-auto rounded-xl bg-white p-12 shadow-md hover:overscroll-contain md:max-w-4xl"
       >
         <div className="md:flex">
           <div className="flex justify-center md:shrink-0 md:justify-start lg:h-48 lg:w-60">
@@ -135,7 +135,7 @@ function HomePart() {
   return (
     <>
       <NavBar />
-      <div className="flex min-w-[514px] flex-wrap justify-center">
+      <div className="flex w-auto flex-wrap justify-center">
         {AllProduct.map((data) => Card(data))}
       </div>
       <Footer />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
@@ -30,10 +30,20 @@ function HomePart() {
       setAddtoCard([...AddtoCard, { ...data, quantity: 1 }]);
       setCompareItems([...CompareItems, data]);
       setNotification(isNotification + 1);
+      // const updatedCart = [...AddtoCard, { ...data, quantity: 1 }];
+      // setAddtoCard(updatedCart);
+      // localStorage.setItem("AddtoCard", JSON.stringify(updatedCart));
     } else {
       alert(`This Item is Alreay Added to your card..!!`);
     }
   };
+
+  // useEffect(() => { 
+  //   const data = localStorage.getItem("AddtoCard");
+  //   if (data) {
+  //     setAddtoCard(JSON.parse(data));
+  //   }
+  // }, []);
 
   const Card = (data) => (
     <main className="mx-auto my-5 min-w-[300px] max-w-sm p-4 text-center md:max-w-4xl">

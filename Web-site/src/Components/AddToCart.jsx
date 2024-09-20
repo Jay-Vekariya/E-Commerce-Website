@@ -66,19 +66,19 @@ export default function AddToCart() {
               >
                 Delete
               </div>
-              {isAuthenticated ? (
-                <button
-                  className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
-                  onClick={() => {
-                    // setpaymentItem([...paymentItem, listofcard]);
-                    setpaymentItem([listofcard]);
-                    console.log(paymentItem);
-                    navigate("PaymentPage");
-                  }}
-                >
-                  Next
-                </button>
-              ) : (
+              {/* {isAuthenticated ? ( */}
+              <button
+                className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
+                onClick={() => {
+                  // setpaymentItem([...paymentItem, listofcard]);
+                  setpaymentItem([listofcard]);
+                  console.log(paymentItem);
+                  navigate("PaymentPage");
+                }}
+              >
+                Next
+              </button>
+              {/* ) : (
                 <button
                   className="cursor-pointer rounded-xl border bg-green-600 p-1.5"
                   onClick={() => {
@@ -87,7 +87,7 @@ export default function AddToCart() {
                 >
                   Next
                 </button>
-              )}
+              )} */}
             </div>
           </div>
           <div className="flex place-content-center pb-4 md:flex-col md:place-content-start lg:place-content-start">

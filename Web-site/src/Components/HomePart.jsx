@@ -38,7 +38,7 @@ function HomePart() {
     }
   };
 
-  // useEffect(() => { 
+  // useEffect(() => {
   //   const data = localStorage.getItem("AddtoCard");
   //   if (data) {
   //     setAddtoCard(JSON.parse(data));
@@ -102,18 +102,18 @@ function HomePart() {
               >
                 Add To Cart
               </button>
-              {isAuthenticated ? (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate("PaymentPage");
-                    setpaymentItem([data]);
-                  }}
-                  className="mx-3 h-10 rounded-md bg-green-600 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
-                >
-                  Buy Now
-                </button>
-              ) : (
+              {/* {isAuthenticated ? ( */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate("PaymentPage");
+                  setpaymentItem([data]);
+                }}
+                className="mx-3 h-10 rounded-md bg-green-600 p-2 uppercase text-white transition duration-300 hover:bg-blue-600"
+              >
+                Buy Now
+              </button>
+              {/* ) : (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -123,7 +123,7 @@ function HomePart() {
                 >
                   Buy Now
                 </button>
-              )}
+              )} */}
             </div>
           </div>
           <div className="flex-col place-content-center text-center text-[20px] md:flex-col md:place-content-start lg:place-content-start">
